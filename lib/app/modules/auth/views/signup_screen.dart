@@ -20,7 +20,7 @@ class SignupScreen extends GetView<AuthController> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'Attendacne App',
+                          'Attendance App',
                           style: TextStyle(
                               fontSize: 25.0, fontWeight: FontWeight.bold),
                         ),
@@ -48,7 +48,7 @@ class SignupScreen extends GetView<AuthController> {
                                 color: Colors.green),
                             child: Center(
                               child: Text(
-                                'Signup as Teahcer',
+                                'Signup as Teacher',
                                 style: TextStyle(color: Colors.white),
                               ),
                             ),
