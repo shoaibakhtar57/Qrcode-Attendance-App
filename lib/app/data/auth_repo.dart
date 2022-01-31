@@ -65,12 +65,9 @@ class AuthRepo {
       log('USER IS NOT NULL $userData');
       try {
         print('INSIDE TRY');
-        log('${UserModel.fromJson(userData)}');
-        await _firestore
-            .collection('Users')
-            .doc(firebaseUser.user!.uid)
-            .set(userData);
-        log('${UserModel.fromJson(userData)}');
+
+        await usersRef.doc(firebaseUser.user!.uid).set(userData);
+
         return UserModel.fromJson(userData);
       } on FirebaseException catch (error, stacktrace) {
         log('There was an error while signing up: $error',

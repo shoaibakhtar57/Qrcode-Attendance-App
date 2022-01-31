@@ -14,7 +14,7 @@ class QrCodeScreen extends StatelessWidget {
         child: RepaintBoundary(
           //    key: globalKey,
           child: QrImage(
-            data: '${subject.subjectName} ${subject.teacherName}',
+            data: '${subject.subjectName} ${subject.teacherName} ',
             embeddedImageStyle: QrEmbeddedImageStyle(
               size: Size(80, 120),
             ),

@@ -18,14 +18,17 @@ class SignUpForm extends GetView<AuthController> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text('Attendance App'),
+            Text(
+              'Attendance App',
+              style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
+            ),
             sizedBox,
             Container(
               height: 80.0,
               width: 80.0,
-              // child: Image(
-              //   image: AssetImage('assets/images/ms.png'),
-              // ),
+              child: Image(
+                image: AssetImage('assets/images/ms.png'),
+              ),
             ),
             SizedBox(height: 15.0),
             Container(
