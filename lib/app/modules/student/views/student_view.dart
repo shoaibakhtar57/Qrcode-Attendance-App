@@ -8,6 +8,7 @@ import '../controllers/student_controller.dart';
 class StudentView extends GetView<StudentController> {
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,

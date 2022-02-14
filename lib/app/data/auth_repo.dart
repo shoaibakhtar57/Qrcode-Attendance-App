@@ -54,28 +54,7 @@ class AuthRepo {
     }
   }
 
-  Future<UserModel?> singupUser(userData, email, password) async {
-    final firebaseUser = await _firebaseAuth.createUserWithEmailAndPassword(
-        email: email, password: password);
-    if (firebaseUser.user != null) {
-      userData = {
-        ...userData,
-        'uid': firebaseUser.user!.uid,
-      };
-      log('USER IS NOT NULL $userData');
-      try {
-        print('INSIDE TRY');
-
-        await usersRef.doc(firebaseUser.user!.uid).set(userData);
-
-        return UserModel.fromJson(userData);
-      } on FirebaseException catch (error, stacktrace) {
-        log('There was an error while signing up: $error',
-            name: 'SignUpAndToFirestore', stackTrace: stacktrace);
-        return null;
-      }
-    } else {
-      return null;
-    }
+  Future<void> logOut() async {
+    await _firebaseAuth.signOut();
   }
 }

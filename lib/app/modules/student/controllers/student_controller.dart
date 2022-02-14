@@ -31,8 +31,13 @@ class StudentController extends GetxController {
       qrCodeScanText.value = barcode;
       if (qrCodeScanText.value.isNotEmpty) {
         log('QR CODE VALUE:::::;; ${qrCodeScanText.value}');
-        final codeScanText = qrCodeScanText.value.trim();
-        await markAttendance(subject);
+        if (qrCodeScanText.value == '-1') {
+          Get.snackbar('Error',
+              'There was an error while marking attendance. Try again');
+        } else {
+          final codeScanText = qrCodeScanText.value.trim();
+          await markAttendance(subject);
+        }
       }
       isLoading.value = false;
     } on PlatformException catch (e) {

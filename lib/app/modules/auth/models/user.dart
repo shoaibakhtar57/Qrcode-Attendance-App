@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 class UserModel {
   String name;
   String email;
@@ -7,6 +9,7 @@ class UserModel {
   String semester;
   String role;
   String uid;
+  String subject;
 
   UserModel({
     required this.name,
@@ -17,19 +20,21 @@ class UserModel {
     required this.role,
     required this.studentID,
     required this.uid,
+    required this.subject,
   });
 
   factory UserModel.fromJson(Map<String, dynamic> json) {
+    log(json.toString());
     return UserModel(
-      name: json['name'],
-      email: json['email'],
-      contact: json['contact'],
-      department: json['department'],
-      semester: json['semester'],
-      studentID: json['studentID'],
-      role: json['role'],
-      uid: json['uid'],
-    );
+        name: json['name'],
+        email: json['email'],
+        contact: json['contact'],
+        department: json['department'],
+        semester: json['semester'],
+        studentID: json['studentID'],
+        role: json['role'],
+        uid: json['uid'],
+        subject: json['subject']);
   }
 
   Map<String, dynamic> toJson() => {
@@ -39,5 +44,8 @@ class UserModel {
         'contact': this.contact,
         'department': this.department,
         'semester': this.semester,
+        'subject': this.subject,
+        'uid': this.uid,
+        'role': this.role,
       };
 }

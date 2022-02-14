@@ -98,15 +98,7 @@ class ProfileView extends GetView<ProfileController> {
                         GestureDetector(
                           onTap: () async {
                             await controller.signOut();
-                            // authController.currentUser.value = UserModel(
-                            //     name: '',
-                            //     email: '',
-                            //     contact: '',
-                            //     department: '',
-                            //     semester: '',
-                            //     role: '',
-                            //     studentID: '',
-                            //     uid: '');
+
                             Get.offAllNamed(Routes.AUTH);
                           },
                           child: Container(
